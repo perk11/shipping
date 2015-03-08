@@ -1,7 +1,8 @@
 <?php
 namespace pdt256\Shipping\RateRequest;
 
-class StubFedex extends Adapter
+
+class StubIncorrectResponseAdapter extends Adapter
 {
     protected $artificialDelay = 0;
 
@@ -16,6 +17,6 @@ class StubFedex extends Adapter
             sleep($this->artificialDelay);
         }
 
-        return file_get_contents(__DIR__ . '/FedexResponse.xml');
+        return '<html/>';
     }
 }
